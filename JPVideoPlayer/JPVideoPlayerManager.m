@@ -460,9 +460,12 @@ didCompleteWithError:(NSError *)error {
 - (void)applicationStateMonitor:(JPApplicationStateMonitor *)monitor
       applicationStateDidChange:(JPApplicationState)applicationState {
     BOOL needReturn = !self.managerModel.videoURL ||
-            self.videoPlayer.playerStatus == JPVideoPlayerStatusStop ||
-            self.videoPlayer.playerStatus == JPVideoPlayerStatusPause ||
-            self.videoPlayer.playerStatus == JPVideoPlayerStatusFailed;
+    //@AlphaApps
+    self.videoPlayer.playerStatus == JPVideoPlayerStatusDidPlayToEnd ||
+    //!AlphaApps
+    self.videoPlayer.playerStatus == JPVideoPlayerStatusStop ||
+    self.videoPlayer.playerStatus == JPVideoPlayerStatusPause ||
+    self.videoPlayer.playerStatus == JPVideoPlayerStatusFailed;
     if(applicationState == JPApplicationStateWillResignActive){
         BOOL needPause = YES;
         if (self.delegate && [self.delegate respondsToSelector:@selector(videoPlayerManager:shouldPausePlaybackWhenApplicationWillResignActiveForURL:)]) {

@@ -481,7 +481,10 @@ didReceiveLoadingRequestTask:(JPResourceLoadingRequestWebTask *)requestTask {
         return;
     }
 
-    self.playerStatus = JPVideoPlayerStatusStop;
+    //@AlphaApps
+      //self.playerStatus = JPVideoPlayerStatusStop;
+      self.playerStatus = JPVideoPlayerStatusDidPlayToEnd;
+      //!AlphaApps
     [self callPlayerStatusDidChangeDelegateMethod];
     [self stopCheckBufferingTimerIfNeed];
 

@@ -375,6 +375,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)jp_gotoPortrait;
 
+// @AlphaApps bugfix for videoPlayerView not being centered when viewed for the first time
+- (void)executePortrait;
+// !AlphaApps
+
 /**
  * Call this method to exit full screen.
  *
